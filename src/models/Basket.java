@@ -1,8 +1,7 @@
 package models;
 
-public class Basket extends BaseModel {
+public class Basket extends Product {
     private long userId;
-    private long productId;
     private int count;
 
     public long getUserId() {
@@ -13,12 +12,8 @@ public class Basket extends BaseModel {
         this.userId = userId;
     }
 
-    public long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(long productId) {
-        this.productId = productId;
+    public double getTotalPrice() {
+        return super.getPrise() * count;
     }
 
     public int getCount() {
@@ -27,5 +22,15 @@ public class Basket extends BaseModel {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    @Override
+    public String toString() {
+        return "\n" +
+                "Номер товара " + super.getId() +
+                ", Наименование '" + super.getName() + '\'' +
+                ", Цена " + getTotalPrice() +
+                ", кол-во товара " + getCount() +
+                ", Тип товара " + super.getType();
     }
 }
