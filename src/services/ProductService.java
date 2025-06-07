@@ -41,7 +41,7 @@ public class ProductService implements IProductService {
         return result;
     }
 
-    public List<Basket> putBasket(Basket basket) throws Exception {
+    public void putBasket(Basket basket) throws Exception {
         List<Basket> baskets = domainService.getBasket();
         Basket element = baskets.stream()
                 .filter(x -> x.getId() == basket.getId())
@@ -62,7 +62,7 @@ public class ProductService implements IProductService {
         } else {
             element.setCount(element.getCount() + basket.getCount());
         }
-        return baskets;
+
 
     }
 

@@ -13,6 +13,6 @@ public interface IProductService {
 
     List<Basket> getBasket();
 
-    List<Basket> putBasket(Basket basket) throws Exception;
+    void putBasket(Basket basket) throws Exception;
 
 }

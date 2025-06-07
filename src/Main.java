@@ -63,7 +63,8 @@ public class Main {
                     Basket basket = new Basket();
                     basket.setId(num);
                     basket.setCount(count);
-                    List<Basket> result = productService.putBasket(basket);
+                    productService.putBasket(basket);
+                    List<Basket> result = productService.getBasket();
                     System.out.println(result.toString());
                     double totalAmount = result.stream()
                             .mapToDouble(x -> x.getTotalPrice())
@@ -74,9 +75,7 @@ public class Main {
 
             }
 
-        }
-
-         finally {
+        } finally {
             System.out.println("Завершение программы.");
         }
     }
