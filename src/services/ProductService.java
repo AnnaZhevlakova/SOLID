@@ -1,7 +1,7 @@
 package services;
 
 import Interfaces.IProductService;
-import models.Basket;
+import models.ProductBasket;
 import models.Product;
 import models.ProductFilter;
 
@@ -36,14 +36,14 @@ public class ProductService implements IProductService {
         domainService.getBasket().clear();
     }
 
-    public List<Basket> getBasket() {
-        List<Basket> result = domainService.getBasket();
+    public List<ProductBasket> getBasket() {
+        List<ProductBasket> result = domainService.getBasket();
         return result;
     }
 
-    public void putBasket(Basket basket) throws Exception {
-        List<Basket> baskets = domainService.getBasket();
-        Basket element = baskets.stream()
+    public void putBasket(ProductBasket basket) throws Exception {
+        List<ProductBasket> baskets = domainService.getBasket();
+        ProductBasket element = baskets.stream()
                 .filter(x -> x.getId() == basket.getId())
                 .findFirst()
                 .orElse(null);

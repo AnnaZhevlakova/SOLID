@@ -1,5 +1,5 @@
 import Interfaces.IProductService;
-import models.Basket;
+import models.ProductBasket;
 import models.Product;
 import models.ProductFilter;
 import services.DomainService;
@@ -60,11 +60,11 @@ public class Main {
                     num = in.nextInt();
                     System.out.print("Введите кол-во товара: ");
                     int count = in.nextInt();
-                    Basket basket = new Basket();
+                    ProductBasket basket = new ProductBasket();
                     basket.setId(num);
                     basket.setCount(count);
                     productService.putBasket(basket);
-                    List<Basket> result = productService.getBasket();
+                    List<ProductBasket> result = productService.getBasket();
                     System.out.println(result.toString());
                     double totalAmount = result.stream()
                             .mapToDouble(x -> x.getTotalPrice())

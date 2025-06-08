@@ -1,6 +1,6 @@
 package models;
 
-public class Basket extends Product {
+public class ProductBasket extends Product {
     private long userId;
     private int count;
 
