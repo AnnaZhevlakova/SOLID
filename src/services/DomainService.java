@@ -1,6 +1,6 @@
 package services;
 
-import models.Basket;
+import models.ProductBasket;
 import models.Product;
 import models.ProductType;
 import models.User;
@@ -11,7 +11,7 @@ import java.util.List;
 public class DomainService {
     private User user;
     private List<Product> products;
-    private List<Basket> basket;
+    private List<ProductBasket> basket;
 
     public DomainService() {
         user = new User();
@@ -95,7 +95,7 @@ public class DomainService {
         return products;
     }
 
-    public List<Basket> getBasket() {
+    public List<ProductBasket> getBasket() {
         return basket;
     }
 

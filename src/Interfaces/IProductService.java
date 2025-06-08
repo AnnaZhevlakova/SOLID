@@ -1,6 +1,6 @@
 package Interfaces;
 
-import models.Basket;
+import models.ProductBasket;
 import models.Product;
 import models.ProductFilter;
 
@@ -11,8 +11,8 @@ public interface IProductService {
 
     void clearBasket();
 
-    List<Basket> getBasket();
+    List<ProductBasket> getBasket();
 
-    void putBasket(Basket basket) throws Exception;
+    void putBasket(ProductBasket basket) throws Exception;
 
 }
